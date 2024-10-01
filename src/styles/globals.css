@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-gray-900 text-gray-50;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+main {
+  padding-top: 0; /* Remove extra padding if added by default */
+  margin-top: 0; /* Ensure no unwanted margin */
+}
+
+ 
