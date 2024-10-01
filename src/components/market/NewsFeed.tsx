@@ -1,40 +1,64 @@
-// src/components/market/NewsFeed.tsx
 import React, { useState, useEffect } from 'react';
-import { fetchCryptoNews, NewsArticle } from '../../services/api';
+import axios from 'axios';
+
+interface NewsItem {
+  title: string;
+  url: string;
+  source: string;
+  publishedAt: string;
+}
+
+interface NewsApiResponse {
+  articles: {
+    title: string;
+    url: string;
+    source: {
+      name: string;
+    };
+    publishedAt: string;
+  }[];
+}
 
 const NewsFeed: React.FC = () => {
-  const [articles, setArticles] = useState<NewsArticle[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchNews = async () => {
       try {
-        const news = await fetchCryptoNews(); // This should now work correctly
-        setArticles(news.articles); // Access articles from the response
+        const response = await axios.get<NewsApiResponse>('https://newsapi.org/v2/everything', {
+          params: {
+            q: 'cryptocurrency',
+            apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
+            language: 'en',
+            pageSize: 5,
+          },
+        });
+        setNews(response.data.articles.map((article) => ({
+          title: article.title,
+          url: article.url,
+          source: article.source.name,
+          publishedAt: new Date(article.publishedAt).toLocaleDateString(),
+        })));
       } catch (error) {
-        console.error('Failed to fetch news articles', error);
-      } finally {
-        setLoading(false);
+        console.error('Failed to fetch news:', error);
       }
     };
 
-    fetchData();
+    fetchNews();
   }, []);
 
-  if (loading) {
-    return <div>Loading news...</div>;
-  }
-
   return (
-    <div className="bg-teal-100 shadow-lg rounded-lg p-6">
-      <h2 className="text-2xl font-bold mb-4 text-gray-900">Latest Crypto News</h2>
-      <ul>
-        {articles.map((article, index) => (
-          <li key={index} className="mb-4">
-            <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              {article.title}
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <h2 className="text-2xl font-bold p-4 bg-gray-100">Crypto News</h2>
+      <ul className="divide-y divide-gray-200">
+        {news.map((item, index) => (
+          <li key={index} className="p-4">
+            <a href={item.url} target="_blank" rel="noopener noreferrer" className="block hover:bg-gray-50">
+              <h3 className="text-lg font-semibold text-blue-600">{item.title}</h3>
+              <p className="text-sm text-gray-500 mt-1">
+                {item.source} - {item.publishedAt}
+              </p>
             </a>
-            <p className="text-gray-600 dark:text-gray-400">{article.description}</p>
           </li>
         ))}
       </ul>

@@ -148,6 +148,7 @@ const RateCalculator: React.FC = () => {
             alt="Calculator Illustration"
             width={600}
             height={600}
+            unoptimized // Add this prop to bypass image optimization
           />
         </div>
       </div>

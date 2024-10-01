@@ -9,10 +9,10 @@ import Trade from '@/components/dashboard/Trade';
 import CryptoPriceTracker from '@/components/common/CryptoPriceTracker';
 import Layout from '@/components/layout/Layout';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
-import { useAuth } from '@/context/AuthContext'; // Add this import
+import { useAuth } from '@/context/AuthContext';
 
 const Dashboard: React.FC = () => {
-  const { user, logout } = useAuth(); // Add this line
+  const { user } = useAuth();
 
   return (
     <ProtectedRoute>
@@ -34,17 +34,9 @@ const Dashboard: React.FC = () => {
                 <FunnelIcon className="w-5 h-5 mr-2" />
                 Filter
               </button>
-              {/* Add logout button */}
-              <button 
-                onClick={logout}
-                className="flex items-center px-4 py-2 bg-red-500 text-white rounded shadow hover:bg-red-600 transition"
-              >
-                Logout
-              </button>
             </div>
           </div>
           
-          {/* Add a welcome message */}
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             Welcome, {user?.name || user?.email}
           </p>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MoonIcon, SunIcon, ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useAuth } from '../../context/AuthContext';
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -11,17 +12,16 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to track if the user is authenticated
   const router = useRouter();
-
-  useEffect(() => {
-    // Check if the user is authenticated (you might have a different method to check this)
-    const token = localStorage.getItem('token');
-    setIsAuthenticated(!!token);
-  }, []);
+  const { user, logout } = useAuth();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+
+  const handleLogout = async () => {
+    await logout();
+    router.push('/login');
+  };
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-black text-white">
@@ -63,14 +63,20 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
           </div>
         </nav>
 
-        
         <div className="hidden md:flex items-center space-x-4">
           <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-700">
             {theme === 'dark' ? <SunIcon className="w-4 h-4" /> : <MoonIcon className="w-4 h-4" />}
           </button>
 
-          {!isAuthenticated && (
-            <Link href="/register" passHref>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 text-white px-2 py-2 rounded hover:bg-red-700"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link href="/login" passHref>
               <button className="bg-green-600 text-white px-2 py-2 rounded hover:bg-green-700">
                 Login
               </button>

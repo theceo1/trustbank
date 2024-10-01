@@ -1,57 +1,43 @@
-// src/components/market/MarketTrends.tsx
 import React, { useState, useEffect } from 'react';
-import { fetchMarketTrends, MarketTrend } from '../../services/api';
+import { fetchTrendingCryptos, Crypto } from '../../services/api';
+import Image from 'next/image';
 
 const MarketTrends: React.FC = () => {
-  const [gainers, setGainers] = useState<MarketTrend[]>([]);
-  const [losers, setLosers] = useState<MarketTrend[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [trends, setTrends] = useState<Crypto[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { gainers, losers } = await fetchMarketTrends();
-        setGainers(gainers);
-        setLosers(losers);
+        const data = await fetchTrendingCryptos();
+        setTrends(data);
       } catch (error) {
-        console.error('Failed to fetch market trends', error);
-      } finally {
-        setLoading(false);
+        console.error('Failed to fetch market trends:', error);
       }
     };
 
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div>Loading market trends...</div>;
-  }
-
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6">
-      <h2 className="text-2xl font-bold mb-4 text-gray-900">Market Trends</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-xl font-semibold text-green-600">Top Gainers</h3>
-          <ul>
-            {gainers.map((coin) => (
-              <li key={coin.item.id} className="mt-2">
-                {coin.item.name}: {coin.item.price_change_percentage_24h.toFixed(2)}%
-              </li>
-            ))}
-          </ul>
+    <div>
+      <h2>Market Trends</h2>
+      {trends.map((coin) => (
+        <div key={coin.id}>
+          {coin.thumb && (
+            <Image
+              src={coin.thumb}
+              alt={coin.name}
+              width={24}
+              height={24}
+              unoptimized
+            />
+          )}
+          <h3>{coin.name}</h3>
+          <p>Symbol: {coin.symbol}</p>
+          <p>Market Cap Rank: {coin.market_cap_rank || 'N/A'}</p>
+          <p>Price (BTC): {coin.price_btc?.toFixed(8) || 'N/A'}</p>
         </div>
-        <div>
-          <h3 className="text-xl font-semibold text-red-600">Top Losers</h3>
-          <ul>
-            {losers.map((coin) => (
-              <li key={coin.item.id} className="mt-2">
-                {coin.item.name}: {coin.item.price_change_percentage_24h.toFixed(2)}%
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
