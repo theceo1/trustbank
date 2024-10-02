@@ -23,9 +23,9 @@ const Dashboard: React.FC = () => {
         </Head>
 
         <div className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center mb-8 mt-6">
+          <div className="flex justify-between items-center mt-6">
             <h1 className="text-3xl font-bold text-black">Dashboard</h1>
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <button className="flex items-center px-4 py-2 bg-green-600 text-white rounded shadow hover:bg-teal-600 transition">
                 <ArrowPathIcon className="w-5 h-5 mr-2" />
                 Refresh
@@ -34,10 +34,10 @@ const Dashboard: React.FC = () => {
                 <FunnelIcon className="w-5 h-5 mr-2" />
                 Filter
               </button>
-            </div>
+            </div> */}
           </div>
           
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 mb-8 mt-2">
             Welcome, {user?.name || user?.email}
           </p>
           
@@ -52,7 +52,9 @@ const Dashboard: React.FC = () => {
             
             <div className="lg:col-span-2">
               <MarketOverview />
-              <Trade />
+              <div className="mt-8">
+                <Trade />
+              </div>
             </div>
           </div>
         </div>
