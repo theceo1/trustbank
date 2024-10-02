@@ -123,7 +123,13 @@ const RateCalculator: React.FC = () => {
               {Object.keys(currencyIds).map((currency) => (
                 <button
                   key={currency}
-                  className={`p-2 rounded ${selectedCurrency === currency ? 'bg-green-600 text-white' : 'bg-gray-200'}`}
+                  className={`p-2 rounded ${
+                    selectedCurrency === currency
+                      ? walletAction === 'SELL'
+                        ? 'bg-red-600 text-white'
+                        : 'bg-green-600 text-white'
+                      : 'bg-gray-200'
+                  }`}
                   onClick={() => setSelectedCurrency(currency as 'BTC' | 'ETH' | 'USDT' | 'USDC')}
                 >
                   {currency}
@@ -217,8 +223,8 @@ const RateCalculator: React.FC = () => {
           </button>
           {subscriptionError && <p className="text-red-500 mt-2">{subscriptionError}</p>}
         </form>
-        <h2 className="text-2xl font-bold text-blue-800 mb-4">OR</h2>
-        <p className="text-2xl font-bold text-blue-800 mb-4">Create a free account and get started</p>
+        <h2 className="text-2xl font-bold text-blue-800 mt-2">OR</h2>
+        <p className="text-2xl font-bold text-blue-800">Create a free account today, and get started</p>
         <Link href="/register" className="text-green-600 hover:underline">Register Now</Link>
       </div>
 
