@@ -1,3 +1,4 @@
+//src/components/layout/Header.tsx
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -21,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
   const handleLogout = async () => {
     await logout();
     router.push('/login');
+    setIsMenuOpen(false);
   };
 
   return (
@@ -31,8 +33,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         </Link>
 
         {/* Mobile Menu Icon */}
-        <button className="md:hidden" onClick={toggleSidebar}>
-          {isSidebarOpen ? <XMarkIcon className="w-4 h-4" /> : <Bars3Icon className="w-6 h-6" />}
+        <button className="md:hidden" onClick={toggleMenu}>
+          {isMenuOpen ? <XMarkIcon className="w-4 h-4" /> : <Bars3Icon className="w-6 h-6" />}
         </button>
 
         {/* Desktop Menu */}
@@ -88,19 +90,34 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <nav className="md:hidden bg-black text-white space-y-2 px-2 py-4">
-          <Link href="/dashboard" className="block hover:text-green-600">Dashboard</Link>
-          <Link href="/trade" className="block hover:text-green-600">Trade</Link>
-          {/* <Link href="/wallet" className="block hover:text-green-600">Wallet</Link> */}
-          <Link href="/markets" className="block hover:text-green-600">Markets</Link>
-          <Link href="/calculator" className="block hover:text-green-600">Calculator</Link>
+          <Link href="/dashboard" className="block hover:text-green-600" onClick={toggleMenu}>Dashboard</Link>
+          <Link href="/trade" className="block hover:text-green-600" onClick={toggleMenu}>Trade</Link>
+          <Link href="/markets" className="block hover:text-green-600" onClick={toggleMenu}>Markets</Link>
+          <Link href="/calculator" className="block hover:text-green-600" onClick={toggleMenu}>Calculator</Link>
           <div className="block hover:text-green-600">About</div>
           <div className="ml-4 space-y-1">
-            <Link href="/about/vision" className="block hover:text-green-600">Vision</Link>
-            <Link href="/about/mission" className="block hover:text-green-600">Mission</Link>
-            <Link href="/about/blog" className="block hover:text-green-600">Blog</Link>
-            <Link href="/about/faq" className="block hover:text-green-600">FAQ</Link>
-            <Link href="/about/contact" className="block hover:text-green-600">Contact Us</Link>
+            <Link href="/about/vision" className="block hover:text-green-600" onClick={toggleMenu}>Vision</Link>
+            <Link href="/about/mission" className="block hover:text-green-600" onClick={toggleMenu}>Mission</Link>
+            <Link href="/about/blog" className="block hover:text-green-600" onClick={toggleMenu}>Blog</Link>
+            <Link href="/about/faq" className="block hover:text-green-600" onClick={toggleMenu}>FAQ</Link>
+            <Link href="/about/contact" className="block hover:text-green-600" onClick={toggleMenu}>Contact Us</Link>
           </div>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="block w-full text-left hover:text-green-600 mt-4"
+            >
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link href="/login" className="block hover:text-green-600 mt-4" onClick={toggleMenu}>Login</Link>
+              <Link href="/register" className="block hover:text-green-600" onClick={toggleMenu}>Register</Link>
+            </>
+          )}
+          <button onClick={toggleTheme} className="block w-full text-left hover:text-green-600 mt-4">
+            {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
         </nav>
       )}
     </header>
