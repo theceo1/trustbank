@@ -49,13 +49,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 </a>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/wallet" legacyBehavior>
                 <a className="flex items-center p-2 hover:bg-green-600 rounded">
                   <span className="w-5 h-5 mr-2">💼</span> Wallet
                 </a>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/markets" legacyBehavior>
                 <a className="flex items-center p-2 hover:bg-green-600 rounded">

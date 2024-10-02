@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         <nav className="space-x-6 hidden md:flex">
           <Link href="/dashboard" className="hover:text-green-600">Dashboard</Link>
           <Link href="/trade" className="hover:text-green-600">Trade</Link>
-          <Link href="/wallet" className="hover:text-green-600">Wallet</Link>
+          {/* <Link href="/wallet" className="hover:text-green-600">Wallet</Link> */}
           <Link href="/markets" className="hover:text-green-600">Markets</Link>
           <Link href="/calculator" className="hover:text-green-600">Calculator</Link>
           <div className="relative inline-block text-left group">
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         <nav className="md:hidden bg-black text-white space-y-2 px-2 py-4">
           <Link href="/dashboard" className="block hover:text-green-600">Dashboard</Link>
           <Link href="/trade" className="block hover:text-green-600">Trade</Link>
-          <Link href="/wallet" className="block hover:text-green-600">Wallet</Link>
+          {/* <Link href="/wallet" className="block hover:text-green-600">Wallet</Link> */}
           <Link href="/markets" className="block hover:text-green-600">Markets</Link>
           <Link href="/calculator" className="block hover:text-green-600">Calculator</Link>
           <div className="block hover:text-green-600">About</div>

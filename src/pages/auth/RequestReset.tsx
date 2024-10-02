@@ -1,6 +1,5 @@
 //src/pages/auth/RequestReset.tsx
 import React, { useState } from 'react';
-import { requestPasswordReset } from '../../services/api';
 import Alert from '../../components/common/Alert';
 import Link from 'next/link';
 
@@ -13,12 +12,8 @@ const RequestReset: React.FC = () => {
     e.preventDefault();
     setError('');
     setSuccess('');
-    try {
-      await requestPasswordReset(email);
-      setSuccess('Password reset email sent');
-    } catch (error: any) {
-      setError(error.response?.data?.error || 'An unexpected error occurred');
-    }
+    // TODO: Implement password reset functionality
+    setSuccess('Password reset functionality not implemented yet');
   };
 
   return (

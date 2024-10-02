@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { resetPassword } from '../../services/api';
 import Alert from '../../components/common/Alert';
 
 const ResetPassword: React.FC = () => {
@@ -19,13 +18,9 @@ const ResetPassword: React.FC = () => {
     }
     setError('');
     setSuccess('');
-    try {
-      await resetPassword(token as string, password);
-      setSuccess('Password reset successful');
-      router.push('/login');
-    } catch (error: any) {
-      setError(error.response?.data?.error || 'An unexpected error occurred');
-    }
+    // TODO: Implement password reset functionality
+    setSuccess('Password reset functionality not implemented yet');
+    router.push('/login');
   };
 
   return (
