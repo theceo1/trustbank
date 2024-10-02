@@ -2,12 +2,37 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import withSidebar from '@/components/layout/withSidebar';
 import Modal from '@/components/common/Modal';
+import { supabase } from '@/lib/supabaseClient';
 
   const BlogPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const { data, error } = await supabase
+        .from('newsletter_subscribers')
+        .insert([{ email }]);
+
+      if (error) throw error;
+
+      openModal();
+      setEmail('');
+    } catch (error: any) {
+      setError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -44,19 +69,23 @@ import Modal from '@/components/common/Modal';
               <br />* Exclusive promotions and offers.     
             </p>
 
-            <form className="mt-2 flex flex-col items-center">
+            <form onSubmit={handleSubmit} className="mt-2 flex flex-col items-center">
           <input
             type="email"
             placeholder="Enter your email"
             className="w-full max-w-md px-4 py-2 border rounded-md mb-2"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <button
-            // type="submit"
-            onClick={openModal}
-            className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700"
+            type="submit"
+            className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 disabled:opacity-50"
+            disabled={isSubmitting}
           >
-            Subscribe to Newsletter
+            {isSubmitting ? 'Subscribing...' : 'Subscribe to Newsletter'}
           </button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
           <Modal isOpen={isModalOpen} onClose={closeModal} title="Subscribed">
             <p className="text-green-600">Welcome to the <span className="font-bold text-green-600">TRUSTED</span> community. 😃 </p>
           </Modal>
