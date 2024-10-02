@@ -11,7 +11,7 @@ const CalculatorPage: React.FC = () => {
         <title>Rate Calculator - trustBank</title>
         <meta name="description" content="Calculate cryptocurrency exchange rates" />
       </Head>
-      <div className="container mx-auto px-4 py-2">
+      <div className="container mx-auto px-4 py-16">
         <RateCalculator />
       </div>
     </>

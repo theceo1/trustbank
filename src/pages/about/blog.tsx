@@ -12,31 +12,32 @@ const BlogPage: React.FC = () => {
       <div className="container mx-auto py-2 px-4 text-black mt-4">
         <h1 className="text-3xl font-bold mt-4 mb-4">trustBank Blog</h1>
         <p className="text-black mb-10">
-          Welcome to the trustBank blog! Here, you&apos;ll find the latest updates on the crypto market, as well as news and insights from our company. Stay tuned for expert analysis, company announcements, and tips to help you achieve the most in your financial journey.
+          Welcome to the trustBank blog! Your destination for expert insights, market trends, and company news. Empowering your financial journey, one post at a time.
         </p>
-        <div className="space-y-4">
-          <p>
-            Become the bank you trust. Our mission is to empower individuals with secure, transparent, and accessible financial tools that help them achieve their financial goals.
-          </p>
           <article>
-            <h2 className="text-2xl font-semibold mb-2 mt-10">The Future of Cryptocurrency</h2>
-            <p className='mb-6'>
-              Stay updated with the latest trends and predictions for the future of cryptocurrency. Our experts share their insights on how the market is evolving and what to expect in the coming years.
-            </p>
+            <h2 className="text-2xl font-semibold mb-2 mt-4">The Future of Cryptocurrency</h2>
+          <br />Crypto Insights: Stay ahead of the curve with the latest cryptocurrency market updates, trends, and predictions.<br />
+          <br />trustBank Insights: Get exclusive company announcements, innovative feature releases, and behind-the-scenes stories.<br />
+          <br />Financial Freedom: Discover expert tips and strategies for achieving your financial goals with secure, transparent, and accessible tools.<br />
+          <br />Community Connect: Join the conversation around our latest initiatives, events, and community-driven projects.<br />
           </article>
-          <article>
-            <h2 className="text-2xl font-semibold mb-2 mt-10">trustBank Initiatives</h2>
-            <p className='mb-60'>
+          {/* <article>
+            <h2 className="text-2xl font-semibold mb-2 mt-4">trustBank Initiatives</h2>
+            <p>
               Learn about the latest initiatives and projects we are working on to improve our services and support our users. From new features to community events, stay informed about what&apos;s happening at trustBank.
             </p>
-          </article>
+          </article> */}
           <article>
-            <p>
-              Welcome to the trustBank blog! Here, you&apos;ll find the latest updates on the crypto market, as well as news and insights from our company. Stay tuned for expert analysis, company announcements, and tips to help you make the most of your financial journey.
+          <h2 className="text-2xl font-semibold mb-2 mt-4">Subscribe to Our Newsletter</h2>
+            <p className="text-black">
+              Stay informed, stay ahead. Receive monthly updates on: 
+              <br />* Market analysis and predictions
+              <br />* New feature releases
+              <br />* Community events and initiatives
+              <br />* Exclusive promotions and offers     
             </p>
           </article>
         </div>
-      </div>
     </>
   );
 };

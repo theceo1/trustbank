@@ -14,13 +14,13 @@ const VisionPage: React.FC = () => {
       <div className=" min-h-screen w-full">
         <div className="container py-8 px-4 max-w-4xl mx-auto space-y-8">
           <div>
-            <h1 className="text-2xl font-bold mb-4 mt-4">Our Vision</h1>
+            <h1 className="text-2xl font-bold mb-4 mt-4">Unlock a Brighter Financial Future</h1>
             <p className="text-gray-900 text-sm">
-              At trustBank, our vision is to revolutionize the way people interact with their finances. We believe that everyone should have access to secure, transparent, and empowering financial tools that help them achieve their goals.
+            At trustBank, our vision is to transform the financial landscape, empowering individuals to thrive in a secure, transparent, and innovative ecosystem.
             </p>
           </div>
           <div>
-            <h2 className="text-lg font-bold mb-4">Our Debit Card</h2>
+            <h2 className="text-lg font-bold mb-4">Future of Payment</h2>
             <div className="flex justify-center">
             <Image
                 src="/images/debit-card.png"
@@ -32,25 +32,43 @@ const VisionPage: React.FC = () => {
               />
             </div>
             <p className="text-gray-900 text-sm mt-4">
-              Our trustBank debit card is designed to provide you with a secure and convenient way to manage your finances. With the trustBank logo prominently displayed, this card is a symbol of our commitment to empowering you and building a trustworthy financial ecosystem.
+            Introducing the trustBank Debit Card - a game-changing tool that combines style, security, and convenience. With our iconic logo, this card symbolizes our dedication to empowering your financial ecosystem.
             </p>
           </div>
           <div>
             <h2 className="text-lg font-bold mb-4">Empowering Individuals</h2>
             <p className="text-gray-900 text-sm">
-              We aim to empower individuals by providing them with the knowledge, tools, and resources they need to take control of their financial future. Our platform is designed to be user-friendly and accessible, making it easy for anyone to manage their money, invest, and grow their wealth.
+            Our platform is designed to unleash your financial potential, providing:
+                  <br />* Intuitive tools for effortless money management
+                  <br />* Invest and grow your wealth with confidence
+                  <br />* Access to emerging asset classes and digital economy opportunities
             </p>
           </div>
           <div>
-            <h2 className="text-lg font-bold mb-4">Fostering Innovation</h2>
+            <h2 className="text-lg font-bold mb-4">Innovation, Amplified</h2>
             <p className="text-gray-900 text-sm">
-              We took a responsible approach to innovation, taking into consideration the unique attributes of blockchain technology. trustBank maintains the foundational principles of regulatory compliance while demonstrating how blockchain technology can enhance financial services. With our blockchain-based solutions our users can participate in the digital economy and explore emerging asset classes.
+              We took a responsible approach to innovation, taking into consideration the unique attributes of blockchain technology. 
+               We harness the power of blockchain technology, balancing innovation with regulatory compliance. Our solutions:<br />
+               <br />* Foster financial inclusion and accessibility
+               <br />* Drive transparency and security
+               <br />* Unlock new possibilities for individuals and communities
+
             </p>
           </div>
           <div>
-            <h2 className="text-lg font-bold mb-4">Building Trust</h2>
+            <h2 className="text-lg font-bold mb-4">Built on Trust</h2>
             <p className="text-gray-900 text-sm">
               At the heart of our vision is a commitment to building trust with our users. We believe that transparency, security, and ethical practices are essential for creating a financial ecosystem that truly serves the needs of individuals and communities, globally.
+              <br />Transparency, security, and ethics are the foundation of our vision. We&apos;re committed to:
+                    <br />* Protecting your assets and data
+                    <br />* Delivering exceptional user experiences
+                    <br />* Fostering a community of trust and empowerment
+            </p>
+          </div>
+          <div>
+            <h2 className="text-lg font-bold mb-4">Join the Movement</h2>
+            <p className="text-gray-900 text-sm">
+            Be part of a revolutionary financial ecosystem that puts you first. Experience the future of finance with trustBank.
             </p>
           </div>
         </div>
