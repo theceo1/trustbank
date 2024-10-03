@@ -1,4 +1,4 @@
-// trustbank/tsconfig.json
+// trustBank/tsconfig.json
 {
   "compilerOptions": {
     "target": "es5",

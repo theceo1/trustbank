@@ -204,7 +204,7 @@ const RateCalculator: React.FC = () => {
       </div>
 
       <div className="mt-8 text-center">
-        <p className="text-sm text-gray-600 mb-2">JOIN 30,000+ PEOPLE USING trustBank</p>
+        <p className="text-sm text-gray-600 mb-2">JOIN THE <span className='text-green-600'>TRUSTED</span> COMMUNITY TODAY</p>
         <form onSubmit={handleSubscribe} className="mt-2 flex flex-col items-center">
           <input
             type="email"
@@ -223,9 +223,9 @@ const RateCalculator: React.FC = () => {
           </button>
           {subscriptionError && <p className="text-red-500 mt-2">{subscriptionError}</p>}
         </form>
-        <h2 className="text-2xl font-bold text-blue-800 mt-2">OR</h2>
-        <p className="text-2xl font-bold text-blue-800">Create a free account today, and get started</p>
-        <Link href="/register" className="text-green-600 hover:underline">Register Now</Link>
+        {/* <h2 className="text-2xl font-bold text-blue-800 mt-2">OR</h2> */}
+        {/* <p className="text-2xl font-bold text-blue-800">Create a free account today, and get started</p> */}
+        {/* <Link href="/register" className="text-green-600 hover:underline">Register Now</Link> */}
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Subscribed">
