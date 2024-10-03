@@ -95,12 +95,17 @@ const RateCalculator: React.FC = () => {
     try {
       const { data, error } = await supabase
         .from('newsletter_subscribers')
-        .insert([{ email }]);
+        .upsert({ email }, { onConflict: 'email' })
+        .select();
 
       if (error) throw error;
 
-      setIsModalOpen(true);
-      setEmail('');
+      if (data && data.length > 0) {
+        setIsModalOpen(true);
+        setEmail('');
+      } else {
+        setSubscriptionError('This email is already subscribed to our newsletter.');
+      }
     } catch (error: any) {
       setSubscriptionError(error.message);
     } finally {

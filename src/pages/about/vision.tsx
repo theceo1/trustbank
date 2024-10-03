@@ -16,37 +16,23 @@ const VisionPage: React.FC = () => {
     setError(null);
 
     try {
-      // First, check if the email already exists
-      const { data: existingSubscriber, error: checkError } = await supabase
-        .from('newsletter_subscribers')
-        .select('email')
-        .eq('email', email)
-        .single();
-
-      if (checkError && checkError.code !== 'PGRST116') {
-        // PGRST116 means no rows returned, which is what we want if the email doesn't exist
-        console.error('Error checking existing subscriber:', checkError);
-        throw checkError;
-      }
-
-      if (existingSubscriber) {
-        setError('This email is already subscribed to our newsletter.');
-        return;
-      }
-
-      // If email doesn't exist, proceed with insertion
       const { data, error } = await supabase
         .from('newsletter_subscribers')
-        .insert([{ email: email }]);
+        .upsert({ email: email }, { onConflict: 'email' })
+        .select();
 
       if (error) {
         console.error('Supabase error:', error);
         throw error;
       }
 
-      console.log('Subscription successful:', data);
-      setIsModalOpen(true);
-      setEmail('');
+      if (data && data.length > 0) {
+        console.log('Subscription successful:', data);
+        setIsModalOpen(true);
+        setEmail('');
+      } else {
+        setError('This email is already subscribed to our newsletter.');
+      }
     } catch (error: any) {
       console.error('Error details:', error);
       if (error.message) {

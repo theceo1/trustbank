@@ -21,12 +21,17 @@ import { supabase } from '@/lib/supabaseClient';
     try {
       const { data, error } = await supabase
         .from('newsletter_subscribers')
-        .insert([{ email }]);
+        .upsert({ email }, { onConflict: 'email' })
+        .select();
 
       if (error) throw error;
 
-      openModal();
-      setEmail('');
+      if (data && data.length > 0) {
+        openModal();
+        setEmail('');
+      } else {
+        setError('This email is already subscribed to our newsletter.');
+      }
     } catch (error: any) {
       setError(error.message);
     } finally {
