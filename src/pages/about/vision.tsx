@@ -20,13 +20,22 @@ const VisionPage: React.FC = () => {
         .from('newsletter_subscribers')
         .insert([{ email: email }]);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
 
-      console.log('Subscribed with email:', email);
+      console.log('Subscription successful:', data);
       setIsModalOpen(true);
       setEmail('');
-    } catch (error) {
-      console.error('Error subscribing:', error);
+    } catch (error: any) {
+      console.error('Error details:', error);
+      if (error.message) {
+        console.error('Error message:', error.message);
+      }
+      if (error.code) {
+        console.error('Error code:', error.code);
+      }
       setError('An error occurred while subscribing. Please try again.');
     }
   };
