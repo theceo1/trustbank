@@ -7,6 +7,7 @@ import Head from 'next/head';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import TopCryptoList from '../components/market/TopCryptoList';
 import NewsFeed from '../components/market/NewsFeed';
+import Watchlist from '../components/market/Watchlist';
 
 const MarketsPage: React.FC = () => {
   return (

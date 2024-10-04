@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = async () => {
     await supabase.auth.signOut();
-    router.push('/login');
+    router.push('/');
   };
   const login = async (token: string) => {
     // Implement login logic here

@@ -16,11 +16,17 @@ const Home: React.FC = () => {
     if (token) {
       console.log('Token received, logging in');
       login(token);
-    } else if (!loading && user) {
-      console.log('User already logged in, redirecting to dashboard');
-      router.push('/dashboard');
+    } else if (!loading) {
+      if (user) {
+        console.log('User already logged in, redirecting to dashboard');
+        router.push('/dashboard');
+      } else {
+        console.log('No user logged in, staying on homepage');
+        // Optionally, you could force a reload of the homepage here
+        //  window.location.href = '/';
+      }
     }
-    }, [router.query.token, login, user, loading, router]);
+  }, [router.query.token, login, user, loading, router]);
   
 
   const handleGetStarted = () => {

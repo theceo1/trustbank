@@ -49,31 +49,31 @@ const LoginPage: React.FC = () => {
         <meta name="description" content="Login to your account" />
       </Head>
 
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-        <div className="max-w-md w-full bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 space-y-6">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-200">Login to Your Account</h2>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8 space-y-6 relative">
+          <h2 className="text-3xl font-semibold text-center text-gray-800">Login to Your Account</h2>
           {error && <Alert type="error" message={error} />}
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
+              <label className="block text-sm font-medium text-gray-700">Email Address</label>
               <input
                 type="email"
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-green-300 dark:bg-gray-700 dark:text-gray-200"
+                className="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-green-600"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+              <label className="block text-sm font-medium text-gray-700">Password</label>
               <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-green-300 dark:bg-gray-700 dark:text-gray-200"
+                className="w-full p-3 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-green-600"
               />
             </div>
             <button
@@ -95,12 +95,17 @@ const LoginPage: React.FC = () => {
               Continue with Google
             </button>
           </div>
-          <p className="text-sm text-center text-gray-400 mt-4">
+          <p className="text-sm text-center text-black mt-4">
             Don&apos;t have an account?{' '}
             <Link href="/register" legacyBehavior>
               <a className="text-green-600 hover:underline">Register</a>
             </Link>
           </p>
+          
+          {/* Added trustBank text */}
+          <div className="absolute bottom-2 right-2 text-sm font-semibold text-black">
+            trustBank
+          </div>
         </div>
       </div>
     </>

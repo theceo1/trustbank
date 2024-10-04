@@ -1,3 +1,4 @@
+//src/components/market/NewsFeed.tsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -9,14 +10,14 @@ interface NewsItem {
 }
 
 interface NewsApiResponse {
-  articles: {
+  articles: Array<{
     title: string;
     url: string;
     source: {
       name: string;
     };
     publishedAt: string;
-  }[];
+  }>;
 }
 
 const NewsFeed: React.FC = () => {
@@ -25,14 +26,7 @@ const NewsFeed: React.FC = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get<NewsApiResponse>('https://newsapi.org/v2/everything', {
-          params: {
-            q: 'cryptocurrency',
-            apiKey: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-            language: 'en',
-            pageSize: 5,
-          },
-        });
+        const response = await axios.get<NewsApiResponse>('/api/news');
         setNews(response.data.articles.map((article) => ({
           title: article.title,
           url: article.url,
