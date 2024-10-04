@@ -77,7 +77,7 @@ const BuySell: React.FC = () => {
 
       <Modal isOpen={isModalOpen} onClose={closeModal} title={`Confirm ${action}`}>
         <p>
-          You are about to {action} {amount} {currency}. Do you want to proceed?
+          You are about to {action} ${amount}USD worth of {currency}. Do you want to proceed?
         </p>
         <div className="flex justify-end mt-4 bg-red">
           <button
