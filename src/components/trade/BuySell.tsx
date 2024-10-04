@@ -20,7 +20,7 @@ const BuySell: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+    <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg shadow-gray-400 p-6">
       <h2 className="text-2xl font-bold mb-6">Buy / Sell Cryptocurrency</h2>
       <div className="flex mb-4">
         <button
