@@ -110,7 +110,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white dark:bg-gray-100 p-6 rounded-lg shadow-lg text-center">
               <p className="text-gray-700 mb-4">
-                trustBank has made my crypto trading experience smooth and secure. I couldn&apos;t ask for a better platform.
+                TrustBank has made my crypto trading experience smooth and secure. I couldn&apos;t ask for a better platform.
               </p>
               <p className="font-semibold text-gray-700">- Ijeoma Ogugua</p>
             </div>
