@@ -49,7 +49,7 @@ const NewsFeed: React.FC = () => {
 
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
-      <h2 className="text-2xl font-bold p-4 bg-gray-100">Crypto News</h2>
+      <h2 className="text-2xl font-bold p-4 bg-gray-300">Crypto News</h2>
       {news.length === 0 ? (
         <p className="p-4">Loading news...</p>
       ) : (
@@ -57,7 +57,7 @@ const NewsFeed: React.FC = () => {
           {news.map((item, index) => (
             <li key={index} className="p-4">
               <a href={item.url} target="_blank" rel="noopener noreferrer" className="block hover:bg-gray-50">
-                <h3 className="text-lg font-semibold text-blue-600">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-black">{item.title}</h3>
                 <p className="text-sm text-gray-500 mt-1">
                   {item.source} - {item.publishedAt}
                 </p>

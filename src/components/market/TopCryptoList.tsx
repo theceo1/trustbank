@@ -19,20 +19,20 @@ const TopCryptoList: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
-      <h2 className="text-2xl font-bold p-4 bg-gray-100">Top Cryptocurrencies</h2>
+    <div className="bg-white shadow-lg shadow-gray-400 rounded-lg overflow-hidden">
+      <h2 className="text-2xl font-bold p-4 bg-black">Top Cryptocurrencies</h2>
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-150">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rank</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">24h Change</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Market Cap</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Rank</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Price</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">24h Change</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Market Cap</th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-gray-300">
             {cryptos.map((crypto) => (
               <tr key={crypto.id}>
                 <td className="px-6 py-4 whitespace-nowrap">{crypto.market_cap_rank || 'N/A'}</td>
@@ -42,8 +42,8 @@ const TopCryptoList: React.FC = () => {
                       <Image
                         src={crypto.image}
                         alt={crypto.name}
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                         className="mr-2"
                       />
                     )}
