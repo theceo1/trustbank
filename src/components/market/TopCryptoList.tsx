@@ -20,7 +20,7 @@ const TopCryptoList: React.FC = () => {
 
   return (
     <div className="bg-white shadow-lg shadow-green-600 rounded-lg overflow-hidden">
-      <h2 className="text-2xl font-bold p-4 test-white bg-black">Top Cryptocurrencies</h2>
+      <h2 className="text-2xl font-bold p-4 text-white bg-black">Top Cryptocurrencies</h2>
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-150">

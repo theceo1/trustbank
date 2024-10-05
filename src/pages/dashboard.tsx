@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
             </div>
             
             <div className="lg:col-span-2">
-              <MarketOverview />
+              <MarketOverview itemsPerPage={3} />
               <div className="mt-8">
                 <Trade />
               </div>
