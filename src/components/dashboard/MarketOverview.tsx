@@ -73,38 +73,40 @@ const MarketOverview: React.FC<MarketOverviewProps> = ({ itemsPerPage = 10 }) =>
   return (
     <div className="bg-white p-6 rounded-lg overflow-x-auto">
       <h2 className="text-xl font-semibold mb-4">Market Overview</h2>
-      <table className="w-full min-w-full">
-        <thead>
-          <tr className="text-left text-gray-600">
-            <th className="pb-2 cursor-pointer" onClick={() => handleSort('name')}>Coin</th>
-            <th className="pb-2 cursor-pointer" onClick={() => handleSort('current_price')}>Price</th>
-            <th className="pb-2 cursor-pointer" onClick={() => handleSort('price_change_percentage_24h')}>Change</th>
-            <th className="pb-2 cursor-pointer" onClick={() => handleSort('market_cap')}>Market Cap</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedCryptocurrencies.map((crypto) => (
-            <tr key={crypto.id} className="border-t">
-              <td className="py-3">
-                <div className="flex items-center">
-                  <Image src={crypto.image} alt={crypto.name} width={32} height={32} className="rounded-full mr-3" />
-                  <div>
-                    <p className="font-medium">{crypto.name}</p>
-                    <p className="text-sm text-gray-500">{crypto.symbol.toUpperCase()}</p>
-                  </div>
-                </div>
-              </td>
-              <td className="py-3 font-medium">${crypto.current_price.toLocaleString()}</td>
-              <td className={`py-3 font-medium ${
-                crypto.price_change_percentage_24h >= 0 ? 'text-green-600' : 'text-red-600'
-              }`}>
-                {crypto.price_change_percentage_24h.toFixed(2)}%
-              </td>
-              <td className="py-3 font-medium">${crypto.market_cap.toLocaleString()}</td>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-full table-auto">
+          <thead>
+            <tr className="text-left text-gray-600">
+              <th className="pb-2 pr-4 whitespace-nowrap">Coin</th>
+              <th className="pb-2 px-4 whitespace-nowrap">Price</th>
+              <th className="pb-2 px-4 whitespace-nowrap">Change</th>
+              <th className="pb-2 pl-4 whitespace-nowrap">Market Cap</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sortedCryptocurrencies.map((crypto) => (
+              <tr key={crypto.id} className="border-t">
+                <td className="py-3 pr-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    <Image src={crypto.image} alt={crypto.name} width={28} height={28} className="rounded-full mr-3" />
+                    <div>
+                      <p className="font-medium text-sm sm:text-base">{crypto.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-500">{crypto.symbol.toUpperCase()}</p>
+                    </div>
+                  </div>
+                </td>
+                <td className="py-3 px-4 font-medium text-sm sm:text-base whitespace-nowrap">${crypto.current_price.toLocaleString()}</td>
+                <td className={`py-3 px-4 font-medium text-sm sm:text-base whitespace-nowrap ${
+                  crypto.price_change_percentage_24h >= 0 ? 'text-green-600' : 'text-red-600'
+                }`}>
+                  {crypto.price_change_percentage_24h.toFixed(2)}%
+                </td>
+                <td className="py-3 pl-4 font-medium text-sm sm:text-base whitespace-nowrap">${crypto.market_cap.toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="mt-4 flex justify-between">
         <button
           onClick={() => setPage(prev => Math.max(prev - 1, 1))}
