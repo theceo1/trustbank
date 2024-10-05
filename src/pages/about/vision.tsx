@@ -66,14 +66,9 @@ const VisionPage: React.FC = () => {
           <div>
             <h2 className="text-lg font-bold">Future of Payment</h2>
             <div className="flex justify-center">
-              <Image
-                src="/images/debit-card3.svg"
-                alt="trustBank Debit Card"
-                width={200}
-                height={100}
-                className="rounded-lg shadow-lg"
-                priority
-              />
+              <div style={{ width: '100%', height: '200px', position: 'relative' }}>
+                <Image src="/images/debit-card2.svg" layout="fill" objectFit="contain" alt="Debit Card" />
+              </div>
             </div>
             <p className="text-gray-900 text-sm mt-4">
               Introducing the trustBank Debit Card - a game-changing tool that combines style, security, and convenience. With our iconic logo, this card symbolizes our dedication to empowering your financial ecosystem.
