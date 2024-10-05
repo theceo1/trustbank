@@ -59,27 +59,33 @@ const VisionPage: React.FC = () => {
         <div className="container py-8 px-4 max-w-4xl mx-auto space-y-8">
           <div>
             <h1 className="text-2xl font-bold mt-6">Unlock a Brighter Financial Future</h1>
-            <p className="text-gray-900 text-sm mt-2">
+            <p className="text-black text-sm mt-2">
               At trustBank, our vision is to transform the financial landscape, empowering individuals to thrive in a secure, transparent, and innovative ecosystem.
             </p>
           </div>
           <div>
             <h2 className="text-lg font-bold">Future of Payment</h2>
             <div className="flex justify-center">
-              <div style={{ width: '100%', height: '200px', position: 'relative' }}>
-                <Image src="/images/debit-card2.svg" layout="fill" objectFit="contain" alt="Debit Card" />
+              <div className="relative w-full h-[200px]">
+                <Image 
+                  src="/images/debit-card2.svg" 
+                  fill 
+                  style={{ objectFit: 'contain' }}
+                  alt="Debit Card" 
+                  priority
+                />
               </div>
             </div>
-            <p className="text-gray-900 text-sm mt-4">
+            <p className="text-black text-sm mt-4">
               Introducing the trustBank Debit Card - a game-changing tool that combines style, security, and convenience. With our iconic logo, this card symbolizes our dedication to empowering your financial ecosystem.
             </p>
           </div>
           <div>
             <h2 className="text-lg font-bold">Empowering Individuals</h2>
-            <p className="text-gray-900 text-sm">
+            <p className="text-black text-sm">
               Our platform is designed to unleash your financial potential, providing:
             </p>
-            <ul className="text-gray-900 text-sm list-disc list-inside mt-2">
+            <ul className="text-black text-sm list-disc list-inside mt-2">
               <li>Intuitive tools for effortless money management.</li>
               <li>Invest and grow your wealth with confidence.</li>
               <li>Access to emerging asset classes and digital economy opportunities.</li>
@@ -87,11 +93,11 @@ const VisionPage: React.FC = () => {
           </div>
           <div>
             <h2 className="text-lg font-bold">Innovation, Amplified</h2>
-            <p className="text-gray-900 text-sm">
+            <p className="text-black text-sm">
               We took a responsible approach to innovation, taking into consideration the unique attributes of blockchain technology. 
               We harness the power of blockchain technology, balancing innovation with regulatory compliance. Our solutions:
             </p>
-            <ul className="text-gray-900 text-sm list-disc list-inside mt-2">
+            <ul className="text-black text-sm list-disc list-inside mt-2">
               <li>Foster financial inclusion and accessibility.</li>
               <li>Drive transparency and security.</li>
               <li>Unlock new possibilities for individuals and communities.</li>
@@ -99,13 +105,13 @@ const VisionPage: React.FC = () => {
           </div>
           <div>
             <h2 className="text-lg font-bold">Built on Trust</h2>
-            <p className="text-gray-900 text-sm">
+            <p className="text-black text-sm">
               At the heart of our vision is a commitment to building trust with our users. We believe that transparency, security, and ethical practices are essential for creating a financial ecosystem that truly serves the needs of individuals and communities, globally.
             </p>
-            <p className="text-gray-900 text-sm mt-2">
+            <p className="text-black text-sm mt-2">
               Transparency, security, and ethics are the foundation of our vision. We&apos;re committed to:
             </p>
-            <ul className="text-gray-900 text-sm list-disc list-inside mt-2">
+            <ul className="text-black text-sm list-disc list-inside mt-2">
               <li>Protecting your assets and data.</li>
               <li>Delivering exceptional user experiences.</li>
               <li>Fostering a community of trust and empowerment.</li>
@@ -113,7 +119,7 @@ const VisionPage: React.FC = () => {
           </div>
           <div>
             <h2 className="text-lg font-bold">Join the Movement</h2>
-            <p className="text-gray-900 text-sm">
+            <p className="text-black text-sm">
               Be part of the financial ecosystem that puts you first. Experience the future of finance with trustBank.
             </p>
           </div>
