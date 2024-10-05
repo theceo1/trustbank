@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || '',
   images: {
+    domains: ['assets.coingecko.com', 'coin-images.coingecko.com'],
     remotePatterns: [
       {
         protocol: 'https',

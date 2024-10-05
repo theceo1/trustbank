@@ -71,9 +71,9 @@ const MarketOverview: React.FC<MarketOverviewProps> = ({ itemsPerPage = 10 }) =>
   if (error) return <div className="text-red-500">{error}</div>;
 
   return (
-    <div className="bg-white p-6 rounded-lg">
+    <div className="bg-white p-6 rounded-lg overflow-x-auto">
       <h2 className="text-xl font-semibold mb-4">Market Overview</h2>
-      <table className="w-full">
+      <table className="w-full min-w-full">
         <thead>
           <tr className="text-left text-gray-600">
             <th className="pb-2 cursor-pointer" onClick={() => handleSort('name')}>Coin</th>

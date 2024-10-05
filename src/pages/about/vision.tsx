@@ -67,10 +67,10 @@ const VisionPage: React.FC = () => {
             <h2 className="text-lg font-bold">Future of Payment</h2>
             <div className="flex justify-center">
               <Image
-                src="/images/debit-card.png"
+                src="/images/debit-card3.svg"
                 alt="trustBank Debit Card"
                 width={200}
-                height={50}
+                height={100}
                 className="rounded-lg shadow-lg"
                 priority
               />

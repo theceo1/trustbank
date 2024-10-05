@@ -17,12 +17,13 @@ const Dashboard: React.FC = () => {
   return (
     <ProtectedRoute>
       <Layout>
-        <Head>
-          <title>Dashboard - trustBank</title>
-          <meta name="description" content="User Dashboard" />
-        </Head>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-black mb-6">Dashboard</h1>
+          <Head>
+            <title>Dashboard - trustBank</title>
+            <meta name="description" content="User Dashboard" />
+          </Head>
 
-        <div className="container mx-auto px-4 py-8">
           <div className="flex justify-between items-center mt-6">
             <h1 className="text-3xl font-bold text-black">Dashboard</h1>
             {/* <div className="flex items-center space-x-4">
