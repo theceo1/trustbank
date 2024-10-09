@@ -69,7 +69,7 @@ const BlogPage: React.FC = () => {
         </article> 
 
         <article>
-          <h2 className="text-xl font-semibold mb-2">Subscribe to Waitlist</h2>
+          <h2 className="text-xl font-semibold mb-2">Subscribe to our Waitlist</h2>
           <p className="text-sm text-black mb-4">
             Stay informed, stay ahead. Receive monthly updates on:
           </p>

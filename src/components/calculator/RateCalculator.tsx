@@ -224,7 +224,7 @@ const RateCalculator: React.FC = () => {
             className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 disabled:opacity-50"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Subscribing...' : 'Subscribe to Waitlist'}
+            {isSubmitting ? 'Subscribing...' : 'Subscribe to the Waitlist'}
           </button>
           {subscriptionError && <p className="text-red-500 mt-2">{subscriptionError}</p>}
         </form>

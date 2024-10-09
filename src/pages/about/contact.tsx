@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
         </div>
         <div>
           <label htmlFor="message" className="block text-sm font-semibold">Message</label>
-          <textarea id="message" className="w-full p-2 border rounded" placeholder="Your Message" rows={5}></textarea> {/* Use number for rows */}
+          <textarea id="message" className="w-full p-2 border rounded" placeholder="How can we help?" rows={5}></textarea>
         </div>
         <button type="submit" className="bg-green-600 text-white p-2 rounded hover:bg-green-700">Send</button>
       </form>
