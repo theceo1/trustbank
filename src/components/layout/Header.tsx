@@ -117,9 +117,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
+          {/* <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
             {theme === 'dark' ? <SunIcon className="w-4 h-4" /> : <MoonIcon className="w-4 h-4" />}
-          </button>
+          </button> */}
 
           {user ? (
             <button
@@ -195,9 +195,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, isSidebarOpen }) => {
                   <Link href="/register" className="text-lg hover:text-green-600 transition-colors duration-300" onClick={toggleMenu}>Register</Link>
                 </>
               )}
-              <button onClick={toggleTheme} className="text-lg text-left hover:text-green-600 transition-colors duration-300">
+              {/* <button onClick={toggleTheme} className="text-lg text-left hover:text-green-600 transition-colors duration-300">
                 {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              </button>
+              </button> */}
             </motion.div>
           </motion.nav>
         )}

@@ -32,14 +32,14 @@ const TermsOfService: React.FC = () => {
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">4. Account Registration</h2>
-            <p>4.1. To access certain features of the Services, you must register for an account. You agree to provide accurate, current, and complete information during the registration process.</p>
+            <p className="mb-2">4.1. To access certain features of the Services, you must register for an account. You agree to provide accurate, current, and complete information during the registration process.</p>
             <p>4.2. You are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">5. Use of Services</h2>
-            <p>5.1. You agree to use the Services only for lawful purposes and in accordance with these Terms.</p>
-            <p>5.2. You agree not to use the Services:</p>
+            <p className="mb-2">5.1. You agree to use the Services only for lawful purposes and in accordance with these Terms.</p>
+            <p className="mb-2">5.2. You agree not to use the Services:</p>
             <ul className="list-disc list-inside ml-4">
               <li>In any way that violates any applicable federal, state, local, or international law or regulation.</li>
               <li>To transmit any material that is defamatory, obscene, or offensive.</li>
@@ -50,7 +50,7 @@ const TermsOfService: React.FC = () => {
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">6. Fees and Payments</h2>
-            <p>6.1. trustBank may charge fees for certain Services. You agree to pay all fees and charges incurred in connection with your account.</p>
+            <p className="mb-2">6.1. trustBank may charge fees for certain Services. You agree to pay all fees and charges incurred in connection with your account.</p>
             <p>6.2. We reserve the right to change our fees at any time. Any changes to fees will be posted on our website and will take effect 30 days after posting.</p>
           </section>
 
@@ -87,7 +87,7 @@ const TermsOfService: React.FC = () => {
           <section>
             <h2 className="text-2xl font-semibold mb-2">13. Contact Us</h2>
             <p>
-              If you have any questions about these Terms, please{' '}
+              If you have any question about the Terms of Service, please{' '}
               <Link href="/about/contact" className="text-green-600 hover:underline">
                 contact
               </Link>{' '}

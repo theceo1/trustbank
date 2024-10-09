@@ -108,7 +108,5 @@ export const fetchTrendingCryptos = async (): Promise<Crypto[]> => {
   }
 };
 
-// Note: CoinGecko doesn't provide a news API, so we'll need to remove or replace the news functionality
-// You may want to consider using a different API for crypto news
 
 console.log('COINGECKO_API_URL:', COINGECKO_API_URL);

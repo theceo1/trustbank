@@ -21,15 +21,15 @@ const PrivacyPolicy: React.FC = () => {
         <div className="space-y-6">
           <section>
             <h2 className="text-2xl font-semibold mb-2">1. Information We Collect</h2>
-            <p>1.1. Personal Information: We may collect personal information such as your name, email address, phone number, and government-issued ID numbers when you register for our services.</p>
-            <p>1.2. Financial Information: To provide our services, we may collect financial information such as bank account details, credit card information, and transaction history.</p>
-            <p>1.3. Usage Data: We collect information on how you interact with our services, including access times, pages viewed, and the routes by which you access our services.</p>
+            <p className="mb-2">1.1. Personal Information: We may collect personal information such as your name, email address, phone number, and government-issued ID numbers when you register for our services.</p>
+            <p className="mb-2">1.2. Financial Information: To provide our services, we may collect financial information such as bank account details, credit card information, and transaction history.</p>
+            <p className="mb-2">1.3. Usage Data: We collect information on how you interact with our services, including access times, pages viewed, and the routes by which you access our services.</p>
             <p>1.4. Device Information: We may collect information about the device and internet connection you use to access our services, including hardware model, operating system, unique device identifiers, and mobile network information.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">2. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
+            <p className="mb-2">We use the information we collect to:</p>
             <ul className="list-disc list-inside ml-4">
               <li>Provide, maintain, and improve our services</li>
               <li>Process transactions and send related information</li>
@@ -42,9 +42,9 @@ const PrivacyPolicy: React.FC = () => {
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">3. How We Share Your Information</h2>
-            <p>We may share your personal information with:</p>
-            <p>3.1. Service Providers: We may share your information with third-party vendors who provide services on our behalf.</p>
-            <p>3.2. Business Partners: We may share your information with our business partners to offer you certain products, services or promotions.</p>
+            <p className="mb-2">We may share your personal information with:</p>
+            <p className="mb-2">3.1. Service Providers: We may share your information with third-party vendors who provide services on our behalf.</p>
+            <p className="mb-2">3.2. Business Partners: We may share your information with our business partners to offer you certain products, services or promotions.</p>
             <p>3.3. Legal Requirements: We may disclose your information where required to do so by law or subpoena or if we believe that such action is necessary to comply with the law or defend our legal rights.</p>
           </section>
 
@@ -55,7 +55,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <section>
             <h2 className="text-2xl font-semibold mb-2">5. Your Data Protection Rights</h2>
-            <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+            <p className="mb-2">Depending on your location, you may have certain rights regarding your personal information, including:</p>
             <ul className="list-disc list-inside ml-4">
               <li>The right to access the personal information we hold about you</li>
               <li>The right to request the correction of inaccurate personal information</li>
@@ -88,7 +88,7 @@ const PrivacyPolicy: React.FC = () => {
           <section>
             <h2 className="text-2xl font-semibold mb-2">10. Contact Us</h2>
             <p>
-              If you have any questions about this Privacy Policy, please{' '}
+              If you have any question about the Privacy Policy, please{' '}
               <Link href="/about/contact" className="text-green-600 hover:underline">
                 contact
               </Link>{' '}
