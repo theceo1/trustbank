@@ -69,7 +69,7 @@ const BlogPage: React.FC = () => {
         </article> 
 
         <article>
-          <h2 className="text-xl font-semibold mb-2">Subscribe to Our Newsletter</h2>
+          <h2 className="text-xl font-semibold mb-2">Subscribe to Waitlist</h2>
           <p className="text-sm text-black mb-4">
             Stay informed, stay ahead. Receive monthly updates on:
           </p>
@@ -94,7 +94,7 @@ const BlogPage: React.FC = () => {
               className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 disabled:opacity-50"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Subscribing...' : 'Subscribe to Newsletter'}
+              {isSubmitting ? 'Subscribing...' : 'Subscribe to the waitlist'}
             </button>
             {error && <p className="text-red-500 mt-2">{error}</p>}
           </form>

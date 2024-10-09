@@ -126,7 +126,7 @@ const VisionPage: React.FC = () => {
 
           {/* Subscribe Form */}
           <div className="bg-gray-100 p-6 rounded-lg">
-            <h3 className="text-lg font-bold mb-4">Subscribe to Our Newsletter</h3>
+            <h3 className="text-lg font-bold mb-4">Subscribe to Our Waitlist</h3>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
               <input
                 type="email"

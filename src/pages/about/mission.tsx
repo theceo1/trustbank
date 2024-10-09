@@ -83,7 +83,7 @@ const MissionPage: React.FC = () => {
           <section>
             <h2 className="text-2xl font-bold text-black mb-4">Stay Updated</h2>
             <p className="text-sm text-black mb-4">
-              Subscribe to our newsletter to receive updates on our mission and how we&apos;re making a difference.
+              Subscribe to our waitlist to receive updates on our mission and how we&apos;re making a difference.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col items-start">
               <input
@@ -99,7 +99,7 @@ const MissionPage: React.FC = () => {
                 className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 disabled:opacity-50"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Subscribing...' : 'Subscribe to Newsletter'}
+                {isSubmitting ? 'Subscribing...' : 'Subscribe to the waitlist'}
               </button>
               {error && <p className="text-red-500 mt-2">{error}</p>}
             </form>
