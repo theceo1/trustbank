@@ -113,6 +113,11 @@ const RateCalculator: React.FC = () => {
     }
   };
 
+  // Define the closeModal function
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-blue-100 p-8 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold mb-6">CALCULATOR</h1>
@@ -228,13 +233,12 @@ const RateCalculator: React.FC = () => {
           </button>
           {subscriptionError && <p className="text-red-500 mt-2">{subscriptionError}</p>}
         </form>
-        {/* <h2 className="text-2xl font-bold text-blue-800 mt-2">OR</h2> */}
-        {/* <p className="text-2xl font-bold text-blue-800">Create a free account today, and get started</p> */}
-        {/* <Link href="/register" className="text-green-600 hover:underline">Register Now</Link> */}
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Subscribed">
-        <p className="text-green-600">Welcome to the <span className="font-bold text-green-600">TRUSTED</span> community. 😃 </p>
+      <Modal isOpen={isModalOpen} onClose={closeModal} title="Subscribed">
+        <p className="text-green-600">Welcome to the <span className="font-bold text-green-600">TRUSTED</span> community.🤝</p>
+        <p className="text-green-600">We will reach out to you soon.</p>
+        <p className="mt-6 bg-gray-300 p-2 rounded-lg"> <span className="font-bold text-green-600">Signed:</span> Tony from trustBank</p>
       </Modal>
     </div>
   );

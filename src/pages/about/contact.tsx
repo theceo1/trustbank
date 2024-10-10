@@ -116,8 +116,8 @@ const Contact: React.FC = () => {
               </svg>
             </div>
             <h2 className="text-lg font-semibold mt-4">Thank you for contacting us!</h2>
-            <p className="mt-2">Your satisfaction is our priority. We will reach out to you via email shortly.</p>
-            <p className="mt-4">Signed: Tony from trustBank</p>
+            <p className="mt-2">Your satisfaction is our priority. We will reach out to you via email, shortly.</p>
+            <p className="mt-6 bg-gray-300 p-2 rounded-lg"> <span className="font-bold text-green-600">Signed:</span> Tony from trustBank</p>
             <button onClick={closeModal} className="mt-4 bg-green-600 text-white p-2 rounded hover:bg-green-700">Close</button>
           </div>
         </div>

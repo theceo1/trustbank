@@ -107,7 +107,9 @@ const MissionPage: React.FC = () => {
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={closeModal} title="Subscribed">
-      <p className="text-green-600">Welcome to the <span className="font-bold text-green-600">TRUSTED</span> community. 😃 </p>
+        <p className="text-green-600">Welcome to the <span className="font-bold text-green-600">TRUSTED</span> community.🤝</p>
+        <p className="text-green-600">We will reach out to you soon.</p>
+        <p className="mt-6 bg-gray-300 p-2 rounded-lg"> <span className="font-bold text-green-600">Signed:</span> Tony from trustBank</p>
       </Modal>
     </>
   );
